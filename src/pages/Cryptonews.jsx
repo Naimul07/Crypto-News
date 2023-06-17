@@ -17,10 +17,10 @@ import { useEffect, useState } from "react";
 
   const options = {
     method: 'GET',
-    url: 'https://cryptocurrency-news2.p.rapidapi.com/v1/coindesk',
+    url: 'https://crypto-news34.p.rapidapi.com/news/cryptonews',
     headers: {
       'X-RapidAPI-Key': '8fc94293b2msh58c32e02b1f401dp176237jsn62fe80497b10',
-      'X-RapidAPI-Host': 'cryptocurrency-news2.p.rapidapi.com'
+      'X-RapidAPI-Host': 'crypto-news34.p.rapidapi.com'
     }
   };
 
@@ -32,7 +32,7 @@ export default function Cryptonews() {
           try {
             const response = await axios.request(options);
             // setNews(response.data.articles);
-            setNews(response.data.data);
+            setNews(response.data);
             console.log(response.data);
           } catch (error) {
             console.error(error);
@@ -44,14 +44,15 @@ export default function Cryptonews() {
 
     return (
         <div className="container">
+        <h1 className="text-center mb-4">Crypto News</h1>
          <div className="row">
         {news.map((article, index) => (
           <div className="col-md-4" key={index}>
             <div className="card mb-4">
               <div className="card-body">
                 <h5 className="card-title">{article.title}</h5>
-                <p>{article.description}</p>
-                
+                <p className="card-text">lorem</p>
+                <a href="{article.url}" className="btn btn-primary">Go to news</a>
               </div>
             </div>
           </div>
