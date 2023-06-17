@@ -15,14 +15,24 @@ import { useEffect, useState } from "react";
     }
   }; */
 
-const options = {
+/* const options = {
   method: 'GET',
   url: 'https://crypto-news34.p.rapidapi.com/news/cryptonews',
   headers: {
     'X-RapidAPI-Key': '8fc94293b2msh58c32e02b1f401dp176237jsn62fe80497b10',
     'X-RapidAPI-Host': 'crypto-news34.p.rapidapi.com'
   }
+}; */
+
+const options = {
+  method: 'GET',
+  url: 'https://crypto-news16.p.rapidapi.com/news/coinjournal',
+  headers: {
+    'X-RapidAPI-Key': '8fc94293b2msh58c32e02b1f401dp176237jsn62fe80497b10',
+    'X-RapidAPI-Host': 'crypto-news16.p.rapidapi.com'
+  }
 };
+
 
 export default function Cryptonews() {
   const [news, setNews] = useState([]);
@@ -53,11 +63,12 @@ export default function Cryptonews() {
         {/* <h1 className="text-center ">Crypto News</h1> */}
         <div className="row">
           {news.map((article, index) => (
-            <div className="col-md-4" key={index}>
+            <div className="col-md-6 col-lg-4" key={index}>
               <div className="card mb-4 bg-dark text-white shadow p-3 mb-5 rounded">
                 <div className="card-body">
                   <h5 className="card-title">{article.title}</h5>
-                  <p className="card-text">lorem</p>
+                  <p className="card-text">{article.description}</p>
+                  <p className="card-text "><small className="text-white">{article.date}</small></p>
                   <a href={article.url} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Go to news</a>
                 </div>
               </div>
