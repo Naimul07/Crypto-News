@@ -9,7 +9,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Cryptonews />} />
-          <Route path="/details/:symbol" element={<Cryptodetails />} />
         </Routes>
       </BrowserRouter>
     </main>
