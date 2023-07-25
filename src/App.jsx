@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './App.css'
 import Cryptonews from './pages/Cryptonews.jsx'
 
 function App() {
